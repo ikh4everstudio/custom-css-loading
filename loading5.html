@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Dog Loading Animation</title>
+    <style>
+        .dog-loader {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .dog {
+            width: 60px;
+            height: 40px;
+            background-color: #333;
+            position: absolute;
+            bottom: 0;
+            animation: run 1s infinite linear, bounce 5s infinite alternate;
+        }
+        .dog:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #333;
+            top: -10px;
+            left: 5px;
+        }
+        .dog:after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #333;
+            top: 30px;
+            right: -5px;
+        }
+        @keyframes run {
+            0% { left: -60px; }
+            100% { left: 200px; }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="dog-loader">
+        <div class="dog"></div>
+    </div>
+</body>
+</html>
